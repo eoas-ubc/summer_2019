@@ -1,0 +1,17 @@
+#region conda initialize
+# !! Contents within this block are managed by 'conda init' !!
+(& "C:\Users\Pearl\Miniconda3\Scripts\conda.exe" "shell.powershell" "hook") | Out-String | Invoke-Expression
+#endregion
+
+
+function prompt
+{
+    $l = Split-Path -leaf -path (Get-Location)
+    $p = Split-Path -parent -path (Get-Location)
+    $p = Split-path -leaf $p
+    $e = Split-Path -leaf $env:conda_prefix
+    write-host -noNewLine "($e):$p/$l"
+    return "> "
+}
+conda activate e350
+cd $HOME/Desktop/Summer2019
