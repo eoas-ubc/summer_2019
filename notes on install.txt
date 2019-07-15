@@ -1,0 +1,18 @@
+1. Download miniconda windows version
+2. Updating conda: 
+	conda update conda -n base
+
+3. Make conda forge packages a priority
+	conda config --prepend channels conda-forge   	<installs packages>
+	conda config --show channels
+	conda update --all  				<picks up new packages from forge>
+
+4. Setup environment:
+	<cd into directory containing the environment.yml file>
+	conda env create -f .\environment.yml -v
+ 
+5. Download code-insiders for visual studio and change base directory for power shell
+	code-insiders $profile
+	<copy paste from profile text file, change path details>
+
+
