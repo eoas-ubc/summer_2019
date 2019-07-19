@@ -2,9 +2,32 @@
 <TODO> : Include notes on setting up EC2 instance
 
 https://medium.com/@GalarnykMichael/aws-ec2-part-1-creating-ec2-instance-9d7f8368f78a
-________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________
 
-Get Anaconda for ec2
+
+<TODO: INCLUDE NOTES ON INTALLING PIP>
+
+________________________________________________________________________________________________________________________________________________________________
+
+<TODO: INCLUDE NOTES ON INSTALLING AWS CLI>
+
+Get fingerprint for users with an aws educate account
+	# Go to Vocareum. This is kinda the main page of your student AWS account.
+	# Find the blue button Account Details, click it - find the Acess Key ID, Secret Key ID. 
+	
+	aws configure
+	# add credentials as asked referring to the Vocareum site
+	aws ec2 get-console-output --instance-id i-0146e9d2ff577c99f  #the last tab needs to be your EC2 instance id
+
+________________________________________________________________________________________________________________________________________________________________
+
+
+
+<TODO: ADD NOTES ON GOW FOR CHMOD USE>
+________________________________________________________________________________________________________________________________________________________________
+
+# Get Anaconda for ec2
+
 
 1.Private key file is not publicly visible:
 	chmod 400 .\test1GOES16.pem 
@@ -75,11 +98,14 @@ Setting up jupyter notebook in the cloud
 	# https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html?icmpid=docs_ec2_console
 	#Follow instructions at the link
 
+	
+
 
 3. SSH to EC2 instance
 	ssh -i test1GOES16.pem ubuntu@ec2-54-196-119-28.compute-1.amazonaws.com
 
 4. Connect to jupyter notebook
+	# follow these steps if needed
 	sudo snap install jupyter
 	sudo apt-get update
 	sudo apt install jupyter-core
@@ -120,3 +146,10 @@ ________________________________________________________________________________
 	#or refer to band reference guides
 
 ____________________________________________________________
+
+
+
+
+
+
+
