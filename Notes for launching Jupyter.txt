@@ -1,10 +1,13 @@
-TODO> : Include notes on setting up EC2 instance
 
-https://medium.com/@GalarnykMichael/aws-ec2-part-1-creating-ec2-instance-9d7f8368f78a
 ________________________________________________________________________________________________________________________________________________________________
 
 
 <TODO: ADD NOTES ON GOW FOR CHMOD USE>
+
+1. Dowload GOW for windows using this link:
+	https://github.com/bmatzelle/gow/releases/download/v0.8.0/Gow-0.8.0.exe?source=post_page---------------------------
+
+2. Open the .exe file and complete installation
 ________________________________________________________________________________________________________________________________________________________________
 
 # Get Anaconda for ec2
@@ -14,6 +17,7 @@ ________________________________________________________________________________
 
 2. SSH into EC2 
 	ssh -i .\test1GOES16.pem ubuntu@ec2-54-224-2-13.compute-1.amazonaws.com
+	if logging in for the first time it might display a warning. Select yes.
 
 3.Download Anaconda
 	#use this link, copy link address for desired version
@@ -29,9 +33,18 @@ ________________________________________________________________________________
 
 # Setting up jupyter notebook in the cloud
 
-1. jupyter notebook --no-browser --port=8888
-2. Store the token somewhere to use it later
-3. Open a new powershell window
-4. ssh -i .\test2GOES16.pem -L 8000:localhost:8888 ubuntu@ec2-3-85-83-64.compute-1.amazonaws.com
-5. Open localhost:8000 on your webbrowser
-6. insert the saved token as password
+1. sudo snap install jupyter
+2. jupyter notebook --no-browser --port=8888
+3. Store the token somewhere to use it later
+4. Open a new powershell window
+5. ssh -i .\test2GOES16.pem -L 8000:localhost:8888 ubuntu@ec2-3-85-83-64.compute-1.amazonaws.com
+6. Open localhost:8000 on your webbrowser
+7. insert the saved token as password
+
+________________________________________________________________________________________________________________________________________________________________
+
+Install AWS CLI
+
+1. sudo apt-get install awscli
+2. sudo apt-get install python3-pip
+3.

@@ -1,0 +1,31 @@
+Notes on setting up EC2 instance
+
+https://medium.com/@GalarnykMichael/aws-ec2-part-1-creating-ec2-instance-9d7f8368f78a
+
+1. Launch EC2 instance
+
+2. Select Ubuntu Server 18.04 LTS (HVM)
+
+3. Select tc.micro general purpose
+
+4. Keep Step 3,4,5 as default - this is the Configure Instance Details page, Add Storage page and Add Tags page
+
+5. In the security group settings maintain 
+	SSH at port 22, 
+	HTTPS at port 443 
+	Custom TCP Rule at port 8888. 
+	Make sure the source is set to anywhere for all 3.
+
+<TODO> insert screenshot
+
+6. Click Review and launch
+
+7. Select Launch. 
+
+8. Select create new key-pair. Give is name you can retype easily and is informative. 
+
+9. Download the key pair to a directory you will use to to launch your notebooks eventually. 
+You will need the key pair every time to connect to the EC2 instance. 
+It can only be downloaded once to save it carefully. 
+
+10. Select launch instances. This is your EC2 instance 
