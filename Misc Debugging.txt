@@ -1,0 +1,89 @@
+
+Install AWS CLI
+
+1. sudo apt-get install awscli
+2. sudo apt-get install python3-pip
+
+Get fingerprint for users with an aws educate account
+	# Go to Vocareum. This is kinda the main page of your student AWS account.
+	# Find the blue button Account Details, click it - find the Acess Key ID, Secret Key ID. 
+	
+	aws configure
+	# add credentials as asked referring to the Vocareum site
+	aws ec2 get-console-output --instance-id i-0146e9d2ff577c99f  #the last tab needs to be your EC2 instance id
+
+
+6. Install and open Python
+	apt install ipython
+	ipython
+
+7. Autheticate jupyter with a password
+	from IPython.lib import passwd
+	passwd()
+	#enter password
+	#verify password
+	#SAVE THE OUTPUT
+
+## Output I received: 'sha1:ec82dfe950cf:214e31cc806dd965aea2b0f806c285a9764ec514'
+
+8. Exit out of ipython
+	exit()
+
+9. In the terminal, type:
+	jupyter notebook --generate-config
+	mkdir certs
+	cd certs
+	sudo openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mycert.pem -out mycert.pem
+	cd ~/.jupyter/
+	nano jupyter_notebook_config.py
+
+10. This will open the config file. Change config to this:
+	c = get_config()
+	c.IPKernelApp.pylab = 'inline'
+	c.NotebookApp.certfile = u'/home/ubuntu/certs/mycert.pem'
+	c.NotebookApp.ip = '*'
+	c.NotebookApp.open_browser = False
+	# Your password below will be whatever you copied earlier
+	c.NotebookApp.password = sha1:ec82dfe950cf:214e31cc806dd965aea2b0f806c285a9764ec514
+	c.NotebookApp.port = 8888   #note if your port 8888 is in use change this
+
+11. Exit out of the .py file:
+	^O   # Crtl O - writes the file
+	^X   # Ctrl X - exits the file
+
+12. No hangups for notebooks. Type:
+	nohup jupyter notebook
+
+13. 
+_______________________________________________________________________________________________
+
+4. Connect to jupyter notebook
+	# follow these steps if needed
+	sudo snap install jupyter
+	sudo apt-get update
+	sudo apt install jupyter-core
+	sudo apt install jupyter-notebook
+
+
+
+
+___________________________________________________________________________________________
+
+1. Install xarray, netCDF4, boto3:
+	pip install xarray netCDF4 boto3
+
+4. GOES on AWS details:
+	https://registry.opendata.aws/noaa-goes/
+	https://docs.opendata.aws/noaa-goes16/cics-readme.html
+5. Quick guide to GOES-16 Product names
+	http://edc.occ-data.org/goes16/getdata/
+	#or refer to band reference guides
+
+____________________________________________________________
+
+
+
+
+
+
+

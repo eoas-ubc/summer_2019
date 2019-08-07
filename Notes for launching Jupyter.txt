@@ -33,18 +33,14 @@ ________________________________________________________________________________
 
 # Setting up jupyter notebook in the cloud
 
-1. sudo snap install jupyter
-2. jupyter notebook --no-browser --port=8888
-3. Store the token somewhere to use it later
-4. Open a new powershell window
-5. ssh -i .\test2GOES16.pem -L 8000:localhost:8888 ubuntu@ec2-3-85-83-64.compute-1.amazonaws.com
-6. Open localhost:8000 on your webbrowser
-7. insert the saved token as password
+1. jupyter notebook --no-browser --port=8888
+2. Store the token somewhere to use it later
+3. Open a new powershell window
+4. ssh -i .\test2GOES16.pem -L 8000:localhost:8888 ubuntu@ec2-3-85-83-64.compute-1.amazonaws.com
+5. Open localhost:8000 on your webbrowser
+6. insert the saved token as password
 
 ________________________________________________________________________________________________________________________________________________________________
 
-Install AWS CLI
 
-1. sudo apt-get install awscli
-2. sudo apt-get install python3-pip
-3.
+
